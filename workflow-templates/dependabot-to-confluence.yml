@@ -9,7 +9,10 @@
 # sphinx_parent_page
 
 name: DependAlert User
-on: [pull_request]
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch: # Allows for manual runs from the UI and CLI - optional
 
 jobs:
   call-workflow-in-another-repo:
